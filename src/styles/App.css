@@ -1,0 +1,56 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Game {
+  background-color: red;
+  width: 60vh;
+  height: 70vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.ScoreBoard {
+  width: 60vh;
+  height: 10vh;
+
+  display: flex;
+}
+
+.ScoreField {
+  height: 10vh;
+  width: 20vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.GameBoard {
+  width: 60vh;
+  height: 60vh;
+  background-color: black;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 1px;
+  grid-row-gap: 1px;
+}
+
+.Square {
+  width: calc(20vh - 0.666px);
+  height: calc(20vh - 0.666px);
+  background-color: #fff;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
