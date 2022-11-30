@@ -81,22 +81,24 @@ function App() {
           if (square.id === idToCheck) squaresToCheck[index] = square.value;
         });
       });
-      if (squaresToCheck.every(value => value === "X")) handleWin("X");
-      if (squaresToCheck.every(value => value === "O")) handleWin("O");
+      if (squaresToCheck.every(value => value === "X")) return handleWin("X");
+      if (squaresToCheck.every(value => value === "O")) return handleWin("O");
+      if (squares.every(value => value.value !== "")) return handleWin("Draw");
     });
   }
 
   const handleWin = (winner) => {
     if (winner === "X") setXWins(xWins + 1);
     if (winner === "O") setOWins(oWins + 1);
+    if (winner === "Draw") setDraws(draws + 1);
 
-    setTimeout(() => {
-      const squaresCopy = [...squares];
-      squaresCopy.forEach(square => {
-        square.value = "";
-      });
-      setSquares(squaresCopy);
-    }, 1000);
+
+    const squaresCopy = [...squares];
+    squaresCopy.forEach(square => {
+      square.value = "";
+    });
+    setSquares(squaresCopy);
+
   }
 
   return (
